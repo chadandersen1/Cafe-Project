@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cafe Project</title>
     <link rel="stylesheet" href="css/cafeStyles.css">
+    <?php
+        if(isset($_GET['ACRedirect'])) {
+            print '<script type="text/javascript">alert("Account created!");</script>';
+        }
+    ?>
 </head>
 <body>
     
