@@ -32,7 +32,7 @@
                 echo "  <p class='price'>".number_format($price, 2)."</p>";
             }
             echo "</div>";
-            echo "<img src='".IMG_PATH.$itemImage."' class='menu_img' />";
+            echo "<img src='".IMG_PATH.$itemImg."' class='menu_img' />";
         }
 
     }
