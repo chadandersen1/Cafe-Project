@@ -15,6 +15,11 @@
             WHERE MenuItem_MealTime.MealTimeID = $mealTime;"
         );
 
+        $times = array("Breakfast", "Lunch", "Dinner");
+
+        echo "  <section id='menus'>
+                    <div class='menu_div'>
+                    <h1 class='menu_header'>{$times[$mealTime-1]}</h1>";
 
         while ($row = $result -> fetch_assoc()) {
             $item = $row['MenuItemName'];
@@ -34,6 +39,10 @@
             echo "</div>";
             echo "<img src='".IMG_PATH.$itemImg."' class='menu_img' />";
         }
+
+        echo "      </div>";
+        include INCL_PATH."menu_selection.php";
+        echo "  </section>";
 
     }
 ?>
