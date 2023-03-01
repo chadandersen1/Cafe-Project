@@ -14,15 +14,16 @@
         define("IMG_PATH", "../images/");
         define("DATA_PATH", "../data/");
         define("PAGE_PATH", "../pages/");
+        
         include INCL_PATH."banner.php";
-        include DATA_PATH."dinner_menu.php";
-
 
         echo "  <section id='menus'>
                     <div class='menu_div'>
                     <h1 class='menu_header'>Dinner</h1>";
 
         include INCL_PATH."menu_builder.php";
+        buildMenu(3);
+
         echo "      </div>";
         include INCL_PATH."menu_selection.php";
         echo "  </section>";

@@ -1,14 +1,39 @@
 <?php
-    foreach($menu_items as $item) {
-        echo "  <div class='menu_item'>
-                    <h3 class='item_header'>{$item['item']}</h3>
-                    <p>{$item['desc']}</p>";
-        if(is_array($prices = $item['price'])) {
-            echo "  <p class='price'>".number_format($prices['price1'], 2)." | ".number_format($prices['price2'], 2)."</p>";
-        } else {
-            echo "  <p class='price'>".number_format($prices, 2)."</p>";
+    function buildMenu($mealTime) {
+
+        $servername = "localhost";
+        $username = "steverq1_chad";
+        $password = "Csci213+#003";
+        $dbname = "steverq1_chad";
+
+        $db_conn = new mysqli($servername, $username, $password, $dbname);
+
+        $result = $db_conn->query(
+            "SELECT MenuItemName, MenuItemDesc, MenuItemPrice, MenuItemPrice2, MenuItemImage
+            FROM MenuItem_MealTime INNER JOIN MenuItem 
+            ON MenuItem_MealTime.MenuItemID = MenuItem.MenuItemID 
+            WHERE MenuItem_MealTime.MealTimeID = $mealTime;"
+        );
+
+
+        while ($row = $result -> fetch_assoc()) {
+            $item = $row['MenuItemName'];
+            $desc = $row['MenuItemDesc'];
+            $price = $row['MenuItemPrice'];
+            $price2 = $row['MenuItemPrice2'];
+            $itemImg = $row['MenuItemImage'];
+
+            echo "  <div class='menu_item'>
+                        <h3 class='item_header'>$item</h3>
+                        <p>$desc</p>";
+            if($price2 !== NULL) {
+                echo "  <p class='price'>".number_format($price, 2)." | ".number_format($price2, 2)."</p>";
+            } else {
+                echo "  <p class='price'>".number_format($price, 2)."</p>";
+            }
+            echo "</div>";
+            echo "<img src='".IMG_PATH.$itemImage."' class='menu_img' />";
         }
-        echo "</div>";
-        echo "<img src='".IMG_PATH.$item['img']."' class='menu_img' />";
+
     }
 ?>

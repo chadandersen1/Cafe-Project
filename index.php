@@ -15,16 +15,7 @@
 <body>
     
     <?php
-
-        $servername = "localhost";
-        $username = "steverq1_chad";
-        $password = "Csci213+#003";
-        $dbname = "steverq1_chad";
-
-        $db_conn = new mysqli($servername, $username, $password, $dbname);
-
-        $result = $db_conn->query("SELECT * FROM customer;");
-
+    
         $specials = array(
             'Monday' => 'Spaghetti and meatballs',
             'Tuesday' => 'Club Sandwich',
@@ -49,14 +40,6 @@
                 echo "<h3 class='item_header'>{$specials[$currentday]}</h3>";
             }
         echo "</section>";
-
-        while ($row = $result -> fetch_assoc()) {
-            $cust_id = $row['cust_id'];
-            $cust_fname = $row['cust_fname'];
-            $cust_lname = $row['cust_lname'];
-            $cust_email = $row['cust_email'];
-            echo "<tr><td>$cust_id</td><td>$cust_fname</td><td>$cust_lname</td><td>$cust_email</td></tr>";
-        }
     ?>
 
 </body>
