@@ -16,7 +16,7 @@ echo "  <header>
 if($_SESSION["name"] == NULL) {
     echo "      <p><a href='".PAGE_PATH."create_acct.php'>Create Account</a> | <a href='".PAGE_PATH."login.php'>Login</a></p>";
 } else {
-    echo "       <p>Welcome, ".$_SESSION["name"]."!</p>";
+    echo "      <p>Welcome, ".$_SESSION["name"]."!</p>";
 };
 echo "       </div>
         </header>";

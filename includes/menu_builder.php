@@ -25,9 +25,14 @@
             $price = $row['MenuItemPrice'];
             $price2 = $row['MenuItemPrice2'];
             $itemImg = $row['MenuItemImage'];
+            if ($row['Calories'] < 500) {
+                $isLowCal = TRUE;
+            } else {
+                $isLowCal = FALSE;
+            }
 
             echo "  <div class='menu_item'>
-                        <h3 class='item_header'>$item</h3>
+                        <h3 class='item_header'>$item <img src='".IMG_PATH."lowcal.png'></h3>
                         <p>$desc</p>";
             if($price2 !== NULL) {
                 echo "  <p class='price'>".number_format($price, 2)." | ".number_format($price2, 2)."</p>";
