@@ -33,7 +33,7 @@
 
             echo "  <div class='menu_item'>
                         <h3 class='item_header'>$item"; 
-            if ($isLowCal) {                    echo "<img src='".IMG_PATH."lowcal.png'>"; } 
+            if ($isLowCal) {                    echo "<img src='".IMG_PATH."lowcal.png' class='cal_img'>"; } 
             echo "</h3><p>$desc</p>";
             if($price2 !== NULL) {
                 echo "  <p class='price'>".number_format($price, 2)." | ".number_format($price2, 2)."</p>";
