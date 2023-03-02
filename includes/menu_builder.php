@@ -25,7 +25,8 @@
             $price = $row['MenuItemPrice'];
             $price2 = $row['MenuItemPrice2'];
             $itemImg = $row['MenuItemImage'];
-            if ($row['MenuItemCalories'] < 600) {
+            $calories = $row['MenuItemCalories'];
+            if ($calories < 600) {
                 $isLowCal = TRUE;
             } else {
                 $isLowCal = FALSE;
