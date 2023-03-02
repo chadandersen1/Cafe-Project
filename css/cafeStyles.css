@@ -93,9 +93,9 @@ section h1 {
     float: left;
 }
 
-.menu_item img {
-    max-width: 20px;
-    max-height: 20px;
+.item_header img {
+    max-width: 5px;
+    max-height: 5px;
 }
 
 .menu_header {
