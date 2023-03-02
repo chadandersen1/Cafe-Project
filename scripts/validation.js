@@ -1,4 +1,4 @@
-function validate() {
+function validatepw() {
     var pwd = document.getElementById("pwd").value;
 
     var pwdregex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[+\-#$]).{8,20}$/

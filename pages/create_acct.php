@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/accountPages.css">
-    <script src="../scripts/validatepw.js"></script>
+    <script src="../scripts/validation.js"></script>
 </head>
 <body>
     <div>
         <h2>Create Account</h2>
-        <form onsubmit="return validate()" action="process.php" method="POST">
+        <form onsubmit="return validatepw()" action="process.php" method="POST">
 
             <label for="fname">First name:</label><br />
             <input type="text" id="fname" name="fname" size=35 required><br />
