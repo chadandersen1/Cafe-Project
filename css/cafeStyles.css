@@ -96,6 +96,7 @@ section h1 {
 .cal_img {
     height: 1em;
     max-height: 1em;
+    float: right;
 }
 
 .menu_header {
