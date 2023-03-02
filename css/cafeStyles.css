@@ -94,8 +94,8 @@ section h1 {
 }
 
 .item_header img {
-    max-width: 5px;
-    max-height: 5px;
+    height: 1em;
+    max-height: 1em;
 }
 
 .menu_header {
