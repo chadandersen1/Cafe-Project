@@ -16,7 +16,7 @@
 <body>
     <div>
         <h2>Login</h2>
-        <form action="processLogin.php" method="POST">
+        <form action="processlogin.php" method="POST">
 
             <label for="email">Email:</label><br />
             <input type="email" id="email" name="email" size=35 required><br />
