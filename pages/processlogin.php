@@ -21,8 +21,9 @@
         //     header("Location: login.php?LoginFailed=''");
         // }
         echo($acct['UserEmail'].$acct['UserPwd']);
-    } else {
-        header("Location: login.php?LoginFailed=''");
-    }
+    } 
+    // else {
+    //     header("Location: login.php?LoginFailed=''");
+    // }
 
 ?>
