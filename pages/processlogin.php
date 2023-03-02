@@ -13,7 +13,7 @@
         "SELECT UserEmail, UserPwd FROM Users WHERE UserEmail = '$email';"
     );
     
-    if ($result) {
+    if (mysql_num_rows($result) != 0) {
         $acct = $result -> fetch_assoc();
         // if (password_verify($pwd, $acct['UserPwd'])) {
         //     header("Location: ../index.php");
