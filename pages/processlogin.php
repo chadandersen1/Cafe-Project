@@ -15,15 +15,14 @@
     
     if (mysqli_num_rows($result) !== 0) {
         $acct = $result -> fetch_assoc();
-        // if (password_verify($pwd, $acct['UserPwd'])) {
-        //     header("Location: ../index.php");
-        // } else {
-        //     header("Location: login.php?LoginFailed=''");
-        // }
-        echo($acct['UserEmail'].$acct['UserPwd']);
+        if (password_verify($pwd, $acct['UserPwd'])) {
+            header("Location: ../index.php");
+        } else {
+            header("Location: login.php?LoginFailed=''");
+        }
     } 
-    // else {
-    //     header("Location: login.php?LoginFailed=''");
-    // }
+    else {
+        header("Location: login.php?LoginFailed=''");
+    }
 
 ?>
