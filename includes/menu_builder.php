@@ -7,7 +7,7 @@
         $db_conn = new mysqli($servername, $username, $password, $dbname);
 
         $result = $db_conn->query(
-            "SELECT MenuItemName, MenuItemDesc, MenuItemPrice, MenuItemPrice2, MenuItemImage
+            "SELECT MenuItemName, MenuItemDesc, MenuItemPrice, MenuItemPrice2, MenuItemImage, MenuItemCalories
             FROM MenuItem_MealTime INNER JOIN MenuItem 
             ON MenuItem_MealTime.MenuItemID = MenuItem.MenuItemID 
             WHERE MenuItem_MealTime.MealTimeID = $mealTime;"
@@ -25,16 +25,16 @@
             $price = $row['MenuItemPrice'];
             $price2 = $row['MenuItemPrice2'];
             $itemImg = $row['MenuItemImage'];
-            $calories = $row['MenuItemCalories'];
-            $isLowCal = FALSE;
-            if ($calories < 600) {
+            if ($row['MenuItemCalories'] < 600) {
                 $isLowCal = TRUE;
+            } else {
+                $isLowCal = FALSE;
             }
 
             echo "  <div class='menu_item'>
                         <h3 class='item_header'>$item"; 
             if ($isLowCal) {                    echo "<img src='".IMG_PATH."lowcal.png' class='cal_img'>"; } 
-            echo "$calories</h3><p>$desc</p>";
+            echo "</h3><p>$desc</p>";
             if($price2 !== NULL) {
                 echo "  <p class='price'>".number_format($price, 2)." | ".number_format($price2, 2)."</p>";
             } else {
