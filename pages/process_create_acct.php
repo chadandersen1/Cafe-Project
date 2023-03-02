@@ -5,10 +5,8 @@
     $email = $_POST['email'];
     $pwd = password_hash($_POST['pwd'], PASSWORD_DEFAULT);
 
-    $servername = "localhost";
-    $username = "steverq1_chad";
-    $password = "Csci213+#003";
-    $dbname = "steverq1_chad";
+    define("DATA_PATH", "../data/");
+    include DATA_PATH.'dbconnection.php';
 
     $db_conn = new mysqli($servername, $username, $password, $dbname);
 

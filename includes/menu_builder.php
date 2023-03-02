@@ -1,10 +1,8 @@
 <?php
     function buildMenu($mealTime) {
 
-        $servername = "localhost";
-        $username = "steverq1_chad";
-        $password = "Csci213+#003";
-        $dbname = "steverq1_chad";
+        define("DATA_PATH", "../data/");
+        include DATA_PATH.'dbconnection.php';
 
         $db_conn = new mysqli($servername, $username, $password, $dbname);
 
