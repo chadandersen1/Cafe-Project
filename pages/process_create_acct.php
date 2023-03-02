@@ -16,6 +16,6 @@
         "INSERT INTO Users VALUES(NULL, '$firstName', '$lastName', '$email', '$pwd');"
     );
 
-    header("Location: ../index.php?ACRedirect=''");
+    header("Location: login.php?ACRedirect=''");
 
 ?>

@@ -11,7 +11,7 @@
 <body>
     <div>
         <h2>Create Account</h2>
-        <form onsubmit="return validatepw()" action="process.php" method="POST">
+        <form onsubmit="return validatepw()" action="process_create_acct.php" method="POST">
 
             <label for="fname">First name:</label><br />
             <input type="text" id="fname" name="fname" size=35 required><br />

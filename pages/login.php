@@ -8,15 +8,18 @@
     <link rel="stylesheet" href="../css/accountPages.css">
     <script src="../scripts/validation.js"></script>
     <?php
+        if(isset($_GET['ACRedirect'])) {
+            print '<script type="text/javascript">alert("Account created! You may now log in.");</script>';
+        }
         if(isset($_GET['LoginFailed'])) {
-            print '<script type="text/javascript">alert("Login failed. Please try again.");</script>';
+            print '<script type="text/javascript">alert("Log in failed. Please try again.");</script>';
         }
     ?>
 </head>
 <body>
     <div>
         <h2>Login</h2>
-        <form action="processlogin.php" method="POST">
+        <form action="process_login.php" method="POST">
 
             <label for="email">Email:</label><br />
             <input type="email" id="email" name="email" size=35 required><br />
