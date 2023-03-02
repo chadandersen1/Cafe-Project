@@ -93,6 +93,11 @@ section h1 {
     float: left;
 }
 
+.menu_item img {
+    max-width: 20px;
+    max-height: 20px;
+}
+
 .menu_header {
     margin: 0 auto;
     padding-top: 5%;
